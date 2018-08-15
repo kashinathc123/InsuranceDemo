@@ -9,7 +9,9 @@ class ContactDetails extends Component{
         return(
             <div>
                 <h1>Contact Details</h1>
-                <p><label>Name:</label><label>{this.props.data.contactInfo.name}</label></p>
+                <small>*Marked fields must be completed, and can only be completed in english.</small>
+                <p><label>Given Names:</label><label>{this.props.data.contactInfo.name}</label></p>
+                <p><label>Family Names:</label><label>{this.props.data.contactInfo.lastName}</label></p>
             </div>
         )
     }

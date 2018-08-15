@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import ContactDetails from './contact-details';
-import {BrowserRouter, Link, Route} from 'react-router-dom'
+import {BrowserRouter, Link, Route} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 var data = require('./db.json');
+
 
 class Contact extends Component{
     constructor(props){
@@ -14,7 +16,7 @@ class Contact extends Component{
         return(
             <div>
                 <ContactDetails data={data}/>
-                <Link className="btn-danger" to="/review-confirm">Confirm</Link>
+                <Link className="btn btn-danger" to="/review-confirm">Confirm</Link>
             </div>
         )
     }
