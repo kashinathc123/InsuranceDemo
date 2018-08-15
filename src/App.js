@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import ContactDetails from './contact-details';
+import Contact from './contact';
+
 import * as ReactBootstrap from 'react-bootstrap';
-import { Route, IndexRoute } from 'react-router';
-var data = require('./db.json');
+import {BrowserRouter, Link, Route} from 'react-router-dom'
+import ReviewConfirm from './review-confirm';
+
 
 class App extends Component {
   render() {
     var Button = ReactBootstrap.Button;
     return (
       <div className="App">
+        <BrowserRouter>
+          <div>
+         
+          <Route  exact path="/" component={Contact}/>
+          <Route  exact path="/review-confirm" component={ReviewConfirm}/>
+          
+          </div>
+        </BrowserRouter>
         
-        <ContactDetails data={data}/>
-
-        <Button className="btn-danger">Confirm</Button>
+        
       </div>
     );
   }
