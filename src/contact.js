@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import ContactDetails from './contact-details';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 var data = require('./db.json');
 
 
