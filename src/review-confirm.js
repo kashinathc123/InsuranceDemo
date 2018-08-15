@@ -8,11 +8,16 @@ var data = require('./db.json');
 class ReviewConfirm extends Component{
     render(){
         return(
+            <BrowserRouter>
             <div>
                 <h1>Review Confirm</h1>
                 <ContactDetails data={data}/>
+                <Acknowledgement />
                 <Link className="btn btn-danger" to="/acknowledgement">Buy Now</Link>
+                
+                <Route  exact path="/acknowledgement" component={Acknowledgement}/>
             </div>
+            </BrowserRouter>
         )
     }
 }

@@ -7,11 +7,11 @@ class ContactDetails extends Component{
 
     render(){
         return(
-            <div>
-                <h1>Contact Details</h1>
-                <small>*Marked fields must be completed, and can only be completed in english.</small>
-                <p><label>Given Names:</label><label>{this.props.data.contactInfo.name}</label></p>
-                <p><label>Family Names:</label><label>{this.props.data.contactInfo.lastName}</label></p>
+            <div className="contact-details-main">
+                <h3 className="component-header">Contact Details</h3>
+                <p><small>*Marked fields must be completed, and can only be completed in english.</small></p>
+                <p><label>Given Names:  </label><b>{this.props.data.contactInfo.name}</b></p>
+                <p><label>Family Names:  </label><b>{this.props.data.contactInfo.lastName}</b></p>
             </div>
         )
     }
