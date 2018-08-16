@@ -2,18 +2,20 @@ import React, {Component} from 'react';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
 import * as ReactBootstrap from 'react-bootstrap';
 import Contact from './contact';
-
+var dateFormat = require('dateformat');
 class Acknowledgement extends Component{
    
+
 
     constructor() {
         super();
 
         var today = new Date(),
-            date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + today.getDay();
-
+            date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + today.getDay();             
+           // dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+        var now = new Date(); 
         this.state = {
-            date: date
+            date: now
         };
     }
 
@@ -23,6 +25,10 @@ class Acknowledgement extends Component{
         var Grid = ReactBootstrap.Grid;
         var Row = ReactBootstrap.Row;
         var Col = ReactBootstrap.Col;
+
+        
+        
+
         return(
             <div>
                 <h4>Your Travel Insurance </h4>
@@ -32,7 +38,7 @@ class Acknowledgement extends Component{
                         <div className="ack-main">
                             <h4>Congratulations !</h4>
                             <div className='date'>
-                               <p>Your Insurance purchase is confirmed on {this.state.date}</p> 
+                               <p>Your Insurance purchase is confirmed on {dateFormat(this.state.date, "dddd, dd mmmm, yyyy")}.</p> 
                                <p>A confirmation email is on it's way.</p> 
                             </div>
                         </div>

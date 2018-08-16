@@ -34,3 +34,6 @@ body {
 .btn.btn-danger{
   border-radius: 0;
 }
+.edit-button{
+  margin-top: 15px;
+}

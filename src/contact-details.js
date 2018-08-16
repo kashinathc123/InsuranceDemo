@@ -9,9 +9,13 @@ class ContactDetails extends Component{
     
         this.handleShow = this.handleShow.bind(this);
         this.handleHide = this.handleHide.bind(this);
-    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSave = this.handleSave.bind(this);
+
         this.state = {
-          show: false
+          show: false,
+          name: this.props.data.contactInfo.name,
+          lastName: this.props.data.contactInfo.lastName
         };
       }
     
@@ -23,6 +27,23 @@ class ContactDetails extends Component{
         this.setState({ show: false });
       }
 
+      handleChange(event) {   
+        const name = event.target.name;
+        const value = event.target.value;
+        this.setState({[name]: value});
+        console.log(event.target.value);
+      }
+
+      handleSave(){
+        this.setState({ 
+            name: this.props.data.contactInfo.name,
+            lastName: this.props.data.contactInfo.lastName,
+            show: false
+         });
+         this.props.updateData(this.state);
+      }
+
+
     render(){
 
         var Grid = ReactBootstrap.Grid;
@@ -31,15 +52,29 @@ class ContactDetails extends Component{
         var ButtonToolbar = ReactBootstrap.ButtonToolbar;
         var Modal = ReactBootstrap.Modal;
         var Button = ReactBootstrap.Button;
+        var Glyphicon = ReactBootstrap.Glyphicon;
         var FormControl = ReactBootstrap.FormControl;
+        var edit = this.props.edit;
+        var editButton;
+        if(edit){
+            editButton = <a href="#" bsstyle="primary" onClick={this.handleShow}><Glyphicon glyph="pencil" /> edit </a>
+        } else {
+            editButton = null;
+        }
         return(
                 <div>
             <Grid className="contact-details-main">
                     <Row>
                         <Col sm={12} md={12} lg={12}>
-                        <h3 className="component-header text-muted">Contact Details  <a href="#" bsStyle="primary" onClick={this.handleShow}>
-                     edit
-                 </a></h3>
+                        <Row>
+                            <Col sm={6} md={11} lg={11}><h3 className="component-header text-muted">Contact Details                       
+                        </h3></Col>
+                            <Col className="edit-button" sm={6} md={1} lg={1}>{editButton}</Col>
+                        </Row>
+                        
+
+                        
+
                         </Col>
                     </Row>
                     <Row>
@@ -94,14 +129,14 @@ class ContactDetails extends Component{
             </Modal.Header>
             <Modal.Body>
                 
-                <p>
+              
                     <Grid>
                     <Row>
                             <Col sm={6} md={2} lg={2}>
                             <label className="text-muted">Given Names:  </label>
                             </Col>
                             <Col sm={6} md={8} lg={8}>
-                            <FormControl style={{width:'300px'}} type="text" value={this.props.data.contactInfo.name} placeholder="Enter text" 
+                            <FormControl name="name" style={{width:'300px'}} type="text" value={this.state.name} placeholder="Enter text" onChange={this.handleChange} 
                             />
                             </Col>
                         </Row>  
@@ -110,15 +145,16 @@ class ContactDetails extends Component{
                             <label className="text-muted">Family Names:  </label>
                             </Col>
                             <Col sm={6} md={8} lg={8}>
-                            <FormControl style={{width:'300px'}} type="text" value={this.props.data.contactInfo.lastName} placeholder="Enter text" 
+                            <FormControl name="lastName" style={{width:'300px'}} type="text" value={this.state.lastName} placeholder="Enter text"  onChange={this.handleChange}
                             />
                             </Col>
                         </Row>  
                         </Grid>
                         
-                </p>
+                
             </Modal.Body>
             <Modal.Footer>
+                <Button className="btn-primary" onClick={this.handleSave}>Save</Button>
                 <Button onClick={this.handleHide}>Close</Button>
             </Modal.Footer>
             </Modal>
