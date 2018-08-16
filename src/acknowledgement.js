@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Link, Route} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import * as ReactBootstrap from 'react-bootstrap';
 import Contact from './contact';
 var dateFormat = require('dateformat');
@@ -9,13 +9,9 @@ class Acknowledgement extends Component{
 
     constructor() {
         super();
-
-        var today = new Date(),
-            date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + today.getDay();             
-           // dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
-        var now = new Date(); 
+        var currentDate = new Date(); 
         this.state = {
-            date: now
+            date: currentDate
         };
     }
 
@@ -31,7 +27,7 @@ class Acknowledgement extends Component{
 
         return(
             <div>
-                <h4>Your Travel Insurance </h4>
+                
                 <Grid>
                      <Row>
                         <Col sm={12} md={12} lg={12}>

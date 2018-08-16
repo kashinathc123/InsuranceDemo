@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Link, Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import * as ReactBootstrap from 'react-bootstrap';
 import ContactDetails from './contact-details';
-//import Acknowledgement from './acknowledgement';
 var data = require('./db.json');
-const isLoggedIn = true;
 
 
 class ReviewConfirm extends Component{
@@ -43,7 +41,7 @@ class ReviewConfirm extends Component{
                  <Grid>
                     <Row>
                         <Col sm={12} md={12} lg={12}>
-                            <h1>Review Confirm</h1>
+                            <h3>Review Confirm</h3>
                         </Col>
                     </Row>
                     <Row>

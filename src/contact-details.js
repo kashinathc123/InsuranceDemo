@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
-import Greeting from './EditContact';
 
 class ContactDetails extends Component{
    
@@ -57,7 +56,7 @@ class ContactDetails extends Component{
         var edit = this.props.edit;
         var editButton;
         if(edit){
-            editButton = <a href="#" bsstyle="primary" onClick={this.handleShow}><Glyphicon glyph="pencil" /> edit </a>
+            editButton = <a bsstyle="primary" onClick={this.handleShow}><Glyphicon glyph="pencil" /> edit </a>
         } else {
             editButton = null;
         }
@@ -67,8 +66,8 @@ class ContactDetails extends Component{
                     <Row>
                         <Col sm={12} md={12} lg={12}>
                         <Row>
-                            <Col sm={6} md={11} lg={11}><h3 className="component-header text-muted">Contact Details                       
-                        </h3></Col>
+                            <Col sm={6} md={11} lg={11}><h4 className="component-header text-muted">Contact Details                       
+                        </h4></Col>
                             <Col className="edit-button" sm={6} md={1} lg={1}>{editButton}</Col>
                         </Row>
                         

@@ -4,40 +4,40 @@ import './App.css';
 import Contact from './contact';
 import Acknowledgement from './acknowledgement';
 import * as ReactBootstrap from 'react-bootstrap';
-import {BrowserRouter, Link, Route} from 'react-router-dom'
+import {BrowserRouter, Route} from 'react-router-dom'
 import ReviewConfirm from './review-confirm';
 
 
 class App extends Component {
   render() {
-    var Button = ReactBootstrap.Button;
     var Grid = ReactBootstrap.Grid;
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
-    var Clearfix = ReactBootstrap.Clearfix;
     var ProgressBar = ReactBootstrap.ProgressBar;
     var now = 75;
 
        return (
       <div className="App">
 
-     
-
-
   <Grid>
   <Row>
       <Col sm={12} md={12} lg={12}>&nbsp;</Col>
   </Row>
+  <Row>
+  <Col sm={12} md={12} lg={12}>
+    <h2 className="text-muted">Your Travel Insurance </h2>
+    </Col>
+  </Row>
     <Row className="show-grid">
-      <Col sm={6} md={4} lg={4}>
-        Personal Details
+      <Col xs={4} sm={4} md={4} lg={4}>
+        1.Personal Details
         
       </Col>
-      <Col sm={6} md={4} lg={4}>
-        Review
+      <Col xs={3} sm={4} md={4} lg={4}>
+        2.Review
       </Col>      
-      <Col sm={6} md={4} lg={4}>
-        Acknowledgement
+      <Col xs={5} sm={4} md={4} lg={4}>
+        3.Acknowledgement
       </Col>     
     </Row>
     <Row>
