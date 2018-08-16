@@ -3,7 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
+.contact-details-main{
+  padding: 0;
+}
 .contact-details-main small{
   font-weight: 700;
 }
@@ -14,9 +16,21 @@ body {
 .component-header{
   border-left: 4px solid #db0011;
   padding-left: 10px;
-  color: #666666;
 }
 .btn-danger{
   background-color: #db0011;
     border-color: #db0011;
+}
+
+.row .progressbar{
+  padding: 0;
+}
+.ack-main{
+  background-color: #474c4a;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+.btn.btn-danger{
+  border-radius: 0;
 }
