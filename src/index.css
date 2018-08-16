@@ -37,3 +37,10 @@ body {
 .edit-button{
   margin-top: 15px;
 }
+.progress{
+  height: 10px;
+  border-radius: 0px;
+}
+.edit-button{
+  cursor: pointer;
+}

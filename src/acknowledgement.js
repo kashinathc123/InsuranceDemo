@@ -21,7 +21,7 @@ class Acknowledgement extends Component{
         var Grid = ReactBootstrap.Grid;
         var Row = ReactBootstrap.Row;
         var Col = ReactBootstrap.Col;
-
+        var Glyphicon = ReactBootstrap.Glyphicon;
         
         
 
@@ -32,7 +32,7 @@ class Acknowledgement extends Component{
                      <Row>
                         <Col sm={12} md={12} lg={12}>
                         <div className="ack-main">
-                            <h4>Congratulations !</h4>
+                            <h4><Glyphicon glyph="glyphicon glyphicon-ok-circle" /> Congratulations !</h4>
                             <div className='date'>
                                <p>Your Insurance purchase is confirmed on {dateFormat(this.state.date, "dddd, dd mmmm, yyyy")}.</p> 
                                <p>A confirmation email is on it's way.</p> 

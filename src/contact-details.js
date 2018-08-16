@@ -56,7 +56,7 @@ class ContactDetails extends Component{
         var edit = this.props.edit;
         var editButton;
         if(edit){
-            editButton = <a bsstyle="primary" onClick={this.handleShow}><Glyphicon glyph="pencil" /> edit </a>
+            editButton = <a bsstyle="primary" className="edit-button" onClick={this.handleShow}><Glyphicon glyph="pencil" /> edit </a>
         } else {
             editButton = null;
         }

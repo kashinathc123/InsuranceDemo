@@ -14,7 +14,7 @@ class App extends Component {
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
     var ProgressBar = ReactBootstrap.ProgressBar;
-    var now = 75;
+    var now = 100;
 
        return (
       <div className="App">
@@ -42,7 +42,7 @@ class App extends Component {
     </Row>
     <Row>
       <Col className="progressbar" sm={12} md={12} lg={12}>      
-        <ProgressBar now={now} />
+        <ProgressBar bsStyle="danger" now={now} />
       </Col>
   </Row>
     

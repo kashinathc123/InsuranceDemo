@@ -23,7 +23,8 @@ class Contact extends Component{
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
     var Button = ReactBootstrap.Button;
-    var editBtn = false;
+    var editBtn = false;   
+
         return(
             <div>
                 <Grid>
