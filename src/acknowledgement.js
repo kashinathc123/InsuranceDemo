@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Link, Route} from 'react-router-dom';
 import * as ReactBootstrap from 'react-bootstrap';
+import Contact from './contact';
 
 class Acknowledgement extends Component{
    
@@ -43,7 +44,7 @@ class Acknowledgement extends Component{
                     <Row>
                         <Col className="text-center" sm={12} md={12} lg={12}>
                             <Link className="btn btn-lg btn-danger" to="/">Buy new policy</Link>                
-                            
+                            <Route exact path="/" component={Contact}/>
                         </Col>
                      </Row>   
 
